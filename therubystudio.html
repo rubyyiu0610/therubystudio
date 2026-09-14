@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ruby Studio · Women's Wellness Coach</title>
+<style>
+  :root {
+    --cream: #faf7f2;
+    --warm: #f2ece0;
+    --border: #e0d8cc;
+    --text: #2a2420;
+    --muted: #8a7d6e;
+    --accent: #7a5c3a;
+    --accent-light: #f5ede0;
+    --green: #4a6741;
+    --green-light: #eef3eb;
+    --red: #8b3a3a;
+    --red-light: #fdf0f0;
+    --amber: #7a5c1e;
+    --amber-light: #fdf6e3;
+    --font-serif: 'Georgia', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--cream); font-family: var(--font-sans); color: var(--text); line-height: 1.6; }
+
+  /* Hero */
+  .hero { background: var(--accent); padding: 48px 24px 40px; text-align: center; }
+  .hero-name { font-family: var(--font-serif); font-size: 30px; color: #fff; letter-spacing: 1px; margin-bottom: 6px; }
+  .hero-title { font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 24px; }
+  .hero-tag { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); font-size: 12px; padding: 5px 12px; border-radius: 20px; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--accent); font-size: 14px; font-weight: 500; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
+
+  /* Section */
+  .section { padding: 28px 20px; border-bottom: 1px solid var(--border); }
+  .section:last-child { border-bottom: none; }
+  .section-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+
+  /* About */
+  .about-text { font-size: 15px; color: var(--text); line-height: 1.75; }
+
+  /* Location */
+  .location-box { background: var(--warm); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .location-name { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+  .location-addr { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .location-mtr { display: inline-block; margin-top: 8px; background: var(--accent-light); color: var(--accent); font-size: 12px; padding: 4px 10px; border-radius: 6px; }
+
+  /* Classes */
+  .class-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 10px; }
+  .class-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
+  .class-name { font-size: 14px; font-weight: 500; }
+  .class-time { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .spot-badge { font-size: 11px; padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; margin-left: 10px; font-weight: 500; }
+  .spot-ok { background: var(--green-light); color: var(--green); }
+  .spot-low { background: var(--amber-light); color: var(--amber); }
+  .spot-forming { background: var(--accent-light); color: var(--accent); }
+  .spot-full { background: var(--red-light); color: var(--red); }
+  .class-dates { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  /* Pricing */
+  .price-box { background: var(--warm); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 12px; }
+  .price-main { font-family: var(--font-serif); font-size: 32px; color: var(--accent); }
+  .price-sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .price-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 4px; }
+
+  /* Makeup policy */
+  .policy-item { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.6; }
+  .policy-item:last-child { border-bottom: none; }
+  .policy-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 7px; }
+
+  /* How to join */
+  .step { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .step:last-child { border-bottom: none; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-serif); }
+  .step-text { font-size: 13px; line-height: 1.6; padding-top: 4px; }
+
+  /* CTA */
+  .cta-section { background: var(--accent); padding: 32px 24px; text-align: center; }
+  .cta-title { font-family: var(--font-serif); font-size: 20px; color: #fff; margin-bottom: 8px; }
+  .cta-sub { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 20px; }
+  .cta-btn { display: inline-block; background: #fff; color: var(--accent); font-size: 14px; font-weight: 500; padding: 12px 28px; border-radius: 8px; text-decoration: none; margin: 4px; }
+  .cta-btn-outline { display: inline-block; border: 1px solid rgba(255,255,255,0.5); color: #fff; font-size: 14px; padding: 12px 28px; border-radius: 8px; text-decoration: none; margin: 4px; }
+
+  /* Footer */
+  .footer { padding: 20px 24px; text-align: center; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-name">The Ruby Studio</div>
+  <div class="hero-title">Women's Wellness Coach · Tsim Sha Tsui</div>
+  <div class="hero-tags">
+    <span class="hero-tag">Girls Group Class</span>
+    <span class="hero-tag">Women's Health</span>
+    <span class="hero-tag">小班教學 Max 4人</span>
+  </div>
+  <a href="https://instagram.com/rubyisagoodgirl" class="hero-cta">Instagram DM 查詢 ↗</a>
+</div>
+
+<!-- About -->
+<div class="section">
+  <div class="section-label">關於 Ruby · About</div>
+  <p class="about-text">
+    你好，我係Ruby！我係一位專注女性健康及功能性訓練的 Wellness Coach，在尖沙咀提供小班 Group Class。
+    <br><br>
+    Hi, I'm Ruby — a Women's Wellness Coach specialising in functional training and women's health. Based in Tsim Sha Tsui, I offer intimate small-group classes designed for women at every stage of life.
+  </p>
+</div>
+
+<!-- Location -->
+<div class="section">
+  <div class="section-label">地點 · Location</div>
+  <div class="location-box">
+    <div class="location-name">麥仕維中心 · Maxim's Centre</div>
+    <div class="location-addr">尖沙咀漢口道 39-41 號，11-12 樓全層<br>39-41 Hankow Road, TST, 11-12/F</div>
+    <span class="location-mtr">尖沙咀站 A1 出口步行 3 分鐘 · 3 min walk from TST Station Exit A1</span>
+  </div>
+</div>
+
+<!-- Classes -->
+<div class="section">
+  <div class="section-label">課堂時間表 · Class Schedule</div>
+
+  <div class="class-card">
+    <div class="class-top">
+      <div>
+        <div class="class-name">Girls Group · 星期六 SAT A</div>
+        <div class="class-time">15:15 – 16:15</div>
+      </div>
+      <span class="spot-badge spot-low">1-2 spots left</span>
+    </div>
+    <div class="class-dates">AUG 15 / 22 / 29 · SEPT 5 / 12 / 19 / 26 · OCT 3</div>
+  </div>
+
+  <div class="class-card">
+    <div class="class-top">
+      <div>
+        <div class="class-name">Girls Group · 星期六 SAT B</div>
+        <div class="class-time">16:15 – 17:15</div>
+      </div>
+      <span class="spot-badge spot-forming">成班中 · Forming</span>
+    </div>
+    <div class="class-dates">AUG 15 / 22 / 29 · SEPT 5 / 12 / 19 / 26 · OCT 3</div>
+  </div>
+
+  <div class="class-card">
+    <div class="class-top">
+      <div>
+        <div class="class-name">Girls Group · 星期四 THUR</div>
+        <div class="class-time">15:30 – 16:30</div>
+      </div>
+      <span class="spot-badge spot-ok">2 spots left</span>
+    </div>
+    <div class="class-dates">AUG 6 / 13 / 20 / 27 · SEPT 3 / 10 / 17 / 24</div>
+  </div>
+
+  <div class="class-card">
+    <div class="class-top">
+      <div>
+        <div class="class-name">Girls Group · 星期一 MON</div>
+        <div class="class-time">14:30 – 15:30</div>
+      </div>
+      <span class="spot-badge spot-low">1 spot left</span>
+    </div>
+    <div class="class-dates">AUG 10 / 17 / 24 / 31 · SEPT 7 / 14 / 21 / 28</div>
+  </div>
+
+  <div class="class-card">
+    <div class="class-top">
+      <div>
+        <div class="class-name">Girls Group · 星期二晚 TUE EVE</div>
+        <div class="class-time">20:15 – 21:15</div>
+      </div>
+      <span class="spot-badge spot-forming">成班中 · Forming</span>
+    </div>
+    <div class="class-dates">AUG 11 / 18 / 25 · SEPT 1 / 8 / 15 / 22 / 29</div>
+  </div>
+
+  <p style="font-size:12px;color:var(--muted);margin-top:8px;text-align:center">每班最多4人 · Max 4 students per class</p>
+</div>
+
+<!-- Pricing -->
+<div class="section">
+  <div class="section-label">收費 · Pricing</div>
+  <div class="price-box">
+    <div class="price-main">$2,988</div>
+    <div class="price-sub">每人 / 8堂一期 · per person / 8-session term</div>
+  </div>
+  <p class="price-note">場地已包含訓練衫、毛巾、沐浴用品及咖啡<br>Venue includes training attire, towels, shower supplies & coffee</p>
+</div>
+
+<!-- Makeup Policy -->
+<div class="section">
+  <div class="section-label">補堂制度 · Makeup Policy</div>
+  <div class="policy-item"><div class="policy-dot"></div><div>提前 <strong>24小時</strong> 通知放堂，可獲補堂 credit · 24-hour advance notice required for a makeup credit</div></div>
+  <div class="policy-item"><div class="policy-dot"></div><div>補堂視乎其他班空位而定，不設保證 · Subject to availability, not guaranteed</div></div>
+  <div class="policy-item"><div class="policy-dot"></div><div>如無空位，credit 可順延至下期首兩堂前使用，或折抵下期學費 <strong>$373</strong> · Credit carries over or offsets next term by $373</div></div>
+  <div class="policy-item"><div class="policy-dot"></div><div>每期最多 <strong>1個</strong> 補堂 credit，不設累積 · Max 1 credit per term, non-cumulative</div></div>
+  <div class="policy-item"><div class="policy-dot"></div><div>少於24小時通知，不設補堂 credit · No credit for last-minute cancellations</div></div>
+  <div class="policy-item"><div class="policy-dot"></div><div>有特殊情況可先與我溝通 😊 · Special circumstances? Just talk to me</div></div>
+</div>
+
+<!-- How to join -->
+<div class="section">
+  <div class="section-label">如何報名 · How to Join</div>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-text">填寫下方報名表<br><span style="color:var(--muted)">Fill in the registration form below</span></div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-text">Ruby 確認名額後，發送付款連結<br><span style="color:var(--muted)">Ruby will confirm your spot and send payment details</span></div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-text">以 PayMe / FPS 繳付 $2,988，並發送截圖確認<br><span style="color:var(--muted)">Pay $2,988 via PayMe / FPS and send your screenshot to confirm</span></div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-text">填寫健康問卷 PAR-Q<br><span style="color:var(--muted)">Complete the health questionnaire</span><br>
+    <a href="https://forms.gle/ugMJ51aPZd5bqrhw9" style="display:inline-block;margin-top:8px;background:var(--accent-light);color:var(--accent);font-size:12px;padding:6px 14px;border-radius:6px;text-decoration:none;">填寫問卷 Complete PAR-Q ↗</a>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-text">Ruby 將你加入 WhatsApp 群組，等待開班！💪<br><span style="color:var(--muted)">Ruby will add you to the WhatsApp group — see you in class!</span></div>
+  </div>
+</div>
+
+<!-- Registration Form -->
+<div class="section">
+  <div class="section-label">立即報名 · Register Now</div>
+  <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">
+    準備好加入了嗎？填寫以下表格，Ruby 會在 24 小時內與你確認名額。<br>
+    Ready to join? Fill in the form below and Ruby will be in touch within 24 hours.
+  </p>
+  <div style="border-radius:10px;overflow:hidden;border:1px solid var(--border);">
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSfAUI2ATwJxZ2RdeQDi0Z-xiiqa8uy3TgsjA59_99GTfAWa2Q/viewform?embedded=true"
+      width="100%"
+      height="900"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      style="display:block;">
+      Loading…
+    </iframe>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-title">準備好了嗎？</div>
+  <div class="cta-sub">有問題隨時WhatsApp，或者Follow我嘅IG了解更多 🌿</div>
+  <a href="https://instagram.com/rubyisagoodgirl" class="cta-btn">@rubyisagoodgirl</a>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  © 2026 The Ruby Studio · Women's Wellness Coach · Tsim Sha Tsui, Hong Kong<br>
+  <span style="margin-top:4px;display:block">ruby@therubystudio.co</span>
+</div>
+
+</body>
+</html>
