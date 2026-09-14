@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Ruby Studio · Women's Wellness Coach</title>
+<title>Girls Group Class by Coach Ruby · The Ruby Studio</title>
 <style>
   :root {
-    --cream: #faf7f2;
-    --warm: #f2ece0;
-    --border: #e0d8cc;
-    --text: #2a2420;
-    --muted: #8a7d6e;
-    --accent: #7a5c3a;
-    --accent-light: #f5ede0;
+    --cream: #F8F2F2;
+    --warm: #F5ECEC;
+    --border: #F1E6E5;
+    --text: #1a1a1a;
+    --muted: #9a8a8a;
+    --accent: #DCC0BE;
+    --accent-dark: #b89a98;
+    --accent-light: #F8F2F2;
     --green: #4a6741;
     --green-light: #eef3eb;
     --red: #8b3a3a;
@@ -26,12 +27,12 @@
   body { background: var(--cream); font-family: var(--font-sans); color: var(--text); line-height: 1.6; }
 
   /* Hero */
-  .hero { background: var(--accent); padding: 48px 24px 40px; text-align: center; }
-  .hero-name { font-family: var(--font-serif); font-size: 30px; color: #fff; letter-spacing: 1px; margin-bottom: 6px; }
-  .hero-title { font-size: 13px; color: rgba(255,255,255,0.7); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+  .hero { background: #DCC0BE; padding: 48px 24px 40px; text-align: center; }
+  .hero-name { font-family: var(--font-serif); font-size: 28px; color: #000; letter-spacing: 1px; margin-bottom: 6px; }
+  .hero-title { font-size: 13px; color: rgba(0,0,0,0.6); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
   .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 24px; }
-  .hero-tag { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.9); font-size: 12px; padding: 5px 12px; border-radius: 20px; }
-  .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--accent); font-size: 14px; font-weight: 500; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
+  .hero-tag { background: rgba(255,255,255,0.5); color: rgba(0,0,0,0.7); font-size: 12px; padding: 5px 12px; border-radius: 20px; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 8px; background: #000; color: #fff; font-size: 14px; font-weight: 500; padding: 12px 24px; border-radius: 8px; text-decoration: none; }
 
   /* Section */
   .section { padding: 28px 20px; border-bottom: 1px solid var(--border); }
@@ -45,7 +46,7 @@
   .location-box { background: var(--warm); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
   .location-name { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
   .location-addr { font-size: 13px; color: var(--muted); line-height: 1.6; }
-  .location-mtr { display: inline-block; margin-top: 8px; background: var(--accent-light); color: var(--accent); font-size: 12px; padding: 4px 10px; border-radius: 6px; }
+  .location-mtr { display: inline-block; margin-top: 8px; background: #DCC0BE; color: #000; font-size: 12px; padding: 4px 10px; border-radius: 6px; }
 
   /* Classes */
   .class-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 10px; }
@@ -55,33 +56,27 @@
   .spot-badge { font-size: 11px; padding: 4px 10px; border-radius: 20px; white-space: nowrap; flex-shrink: 0; margin-left: 10px; font-weight: 500; }
   .spot-ok { background: var(--green-light); color: var(--green); }
   .spot-low { background: var(--amber-light); color: var(--amber); }
-  .spot-forming { background: var(--accent-light); color: var(--accent); }
+  .spot-forming { background: #F5ECEC; color: #b89a98; }
   .spot-full { background: var(--red-light); color: var(--red); }
   .class-dates { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
   /* Pricing */
   .price-box { background: var(--warm); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; margin-bottom: 12px; }
-  .price-main { font-family: var(--font-serif); font-size: 32px; color: var(--accent); }
+  .price-main { font-family: var(--font-serif); font-size: 32px; color: #000; }
   .price-sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
   .price-note { font-size: 12px; color: var(--muted); text-align: center; margin-top: 4px; }
-
-  /* Makeup policy */
-  .policy-item { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.6; }
-  .policy-item:last-child { border-bottom: none; }
-  .policy-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 7px; }
 
   /* How to join */
   .step { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--border); }
   .step:last-child { border-bottom: none; }
-  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-serif); }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: #DCC0BE; color: #000; font-size: 13px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: var(--font-serif); }
   .step-text { font-size: 13px; line-height: 1.6; padding-top: 4px; }
 
   /* CTA */
-  .cta-section { background: var(--accent); padding: 32px 24px; text-align: center; }
-  .cta-title { font-family: var(--font-serif); font-size: 20px; color: #fff; margin-bottom: 8px; }
-  .cta-sub { font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 20px; }
-  .cta-btn { display: inline-block; background: #fff; color: var(--accent); font-size: 14px; font-weight: 500; padding: 12px 28px; border-radius: 8px; text-decoration: none; margin: 4px; }
-  .cta-btn-outline { display: inline-block; border: 1px solid rgba(255,255,255,0.5); color: #fff; font-size: 14px; padding: 12px 28px; border-radius: 8px; text-decoration: none; margin: 4px; }
+  .cta-section { background: #DCC0BE; padding: 32px 24px; text-align: center; }
+  .cta-title { font-family: var(--font-serif); font-size: 20px; color: #000; margin-bottom: 8px; }
+  .cta-sub { font-size: 13px; color: rgba(0,0,0,0.6); margin-bottom: 20px; }
+  .cta-btn { display: inline-block; background: #000; color: #fff; font-size: 14px; font-weight: 500; padding: 12px 28px; border-radius: 8px; text-decoration: none; margin: 4px; }
 
   /* Footer */
   .footer { padding: 20px 24px; text-align: center; font-size: 12px; color: var(--muted); }
@@ -91,12 +86,12 @@
 
 <!-- Hero -->
 <div class="hero">
-  <div class="hero-name">The Ruby Studio</div>
-  <div class="hero-title">Women's Wellness Coach · Tsim Sha Tsui</div>
+  <div class="hero-name">Girls Group Class by Coach Ruby</div>
+  <div class="hero-title">Women's Wellness · Tsim Sha Tsui</div>
   <div class="hero-tags">
-    <span class="hero-tag">Girls Group Class</span>
-    <span class="hero-tag">Women's Health</span>
     <span class="hero-tag">小班教學 Max 4人</span>
+    <span class="hero-tag">Women's Health</span>
+    <span class="hero-tag">Functional Training</span>
   </div>
   <a href="https://instagram.com/rubyisagoodgirl" class="hero-cta">Instagram DM 查詢 ↗</a>
 </div>
@@ -128,34 +123,12 @@
   <div class="class-card">
     <div class="class-top">
       <div>
-        <div class="class-name">Girls Group · 星期六 SAT A</div>
-        <div class="class-time">15:15 – 16:15</div>
-      </div>
-      <span class="spot-badge spot-low">1-2 spots left</span>
-    </div>
-    <div class="class-dates">AUG 15 / 22 / 29 · SEPT 5 / 12 / 19 / 26 · OCT 3</div>
-  </div>
-
-  <div class="class-card">
-    <div class="class-top">
-      <div>
-        <div class="class-name">Girls Group · 星期六 SAT B</div>
-        <div class="class-time">16:15 – 17:15</div>
+        <div class="class-name">Girls Group · 星期一晚 MON EVE</div>
+        <div class="class-time">19:30 – 20:30</div>
       </div>
       <span class="spot-badge spot-forming">成班中 · Forming</span>
     </div>
-    <div class="class-dates">AUG 15 / 22 / 29 · SEPT 5 / 12 / 19 / 26 · OCT 3</div>
-  </div>
-
-  <div class="class-card">
-    <div class="class-top">
-      <div>
-        <div class="class-name">Girls Group · 星期四 THUR</div>
-        <div class="class-time">15:30 – 16:30</div>
-      </div>
-      <span class="spot-badge spot-ok">2 spots left</span>
-    </div>
-    <div class="class-dates">AUG 6 / 13 / 20 / 27 · SEPT 3 / 10 / 17 / 24</div>
+    <div class="class-dates">開班日期待定 · Dates TBC</div>
   </div>
 
   <div class="class-card">
@@ -180,6 +153,28 @@
     <div class="class-dates">AUG 11 / 18 / 25 · SEPT 1 / 8 / 15 / 22 / 29</div>
   </div>
 
+  <div class="class-card">
+    <div class="class-top">
+      <div>
+        <div class="class-name">Girls Group · 星期六A SAT A</div>
+        <div class="class-time">15:15 – 16:15</div>
+      </div>
+      <span class="spot-badge spot-full">已滿 Full</span>
+    </div>
+    <div class="class-dates">AUG 15 / 22 / 29 · SEPT 5 / 12 / 19 / 26 · OCT 3</div>
+  </div>
+
+  <div class="class-card">
+    <div class="class-top">
+      <div>
+        <div class="class-name">Girls Group · 星期六B SAT B</div>
+        <div class="class-time">16:15 – 17:15</div>
+      </div>
+      <span class="spot-badge spot-full">已滿 Full</span>
+    </div>
+    <div class="class-dates">AUG 15 / 22 / 29 · SEPT 5 / 12 / 19 / 26 · OCT 3</div>
+  </div>
+
   <p style="font-size:12px;color:var(--muted);margin-top:8px;text-align:center">每班最多4人 · Max 4 students per class</p>
 </div>
 
@@ -191,17 +186,6 @@
     <div class="price-sub">每人 / 8堂一期 · per person / 8-session term</div>
   </div>
   <p class="price-note">場地已包含訓練衫、毛巾、沐浴用品及咖啡<br>Venue includes training attire, towels, shower supplies & coffee</p>
-</div>
-
-<!-- Makeup Policy -->
-<div class="section">
-  <div class="section-label">補堂制度 · Makeup Policy</div>
-  <div class="policy-item"><div class="policy-dot"></div><div>提前 <strong>24小時</strong> 通知放堂，可獲補堂 credit · 24-hour advance notice required for a makeup credit</div></div>
-  <div class="policy-item"><div class="policy-dot"></div><div>補堂視乎其他班空位而定，不設保證 · Subject to availability, not guaranteed</div></div>
-  <div class="policy-item"><div class="policy-dot"></div><div>如無空位，credit 可順延至下期首兩堂前使用，或折抵下期學費 <strong>$373</strong> · Credit carries over or offsets next term by $373</div></div>
-  <div class="policy-item"><div class="policy-dot"></div><div>每期最多 <strong>1個</strong> 補堂 credit，不設累積 · Max 1 credit per term, non-cumulative</div></div>
-  <div class="policy-item"><div class="policy-dot"></div><div>少於24小時通知，不設補堂 credit · No credit for last-minute cancellations</div></div>
-  <div class="policy-item"><div class="policy-dot"></div><div>有特殊情況可先與我溝通 😊 · Special circumstances? Just talk to me</div></div>
 </div>
 
 <!-- How to join -->
@@ -222,7 +206,7 @@
   <div class="step">
     <div class="step-num">4</div>
     <div class="step-text">填寫健康問卷 PAR-Q<br><span style="color:var(--muted)">Complete the health questionnaire</span><br>
-    <a href="https://forms.gle/ugMJ51aPZd5bqrhw9" style="display:inline-block;margin-top:8px;background:var(--accent-light);color:var(--accent);font-size:12px;padding:6px 14px;border-radius:6px;text-decoration:none;">填寫問卷 Complete PAR-Q ↗</a>
+    <a href="https://forms.gle/ugMJ51aPZd5bqrhw9" style="display:inline-block;margin-top:8px;background:#DCC0BE;color:#000;font-size:12px;padding:6px 14px;border-radius:6px;text-decoration:none;">填寫問卷 Complete PAR-Q ↗</a>
     </div>
   </div>
   <div class="step">
@@ -254,8 +238,8 @@
 
 <!-- CTA -->
 <div class="cta-section">
-  <div class="cta-title">準備好了嗎？</div>
-  <div class="cta-sub">有問題隨時WhatsApp，或者Follow我嘅IG了解更多 🌿</div>
+  <div class="cta-title">有問題？隨時聯絡我 🌿</div>
+  <div class="cta-sub">Follow my IG for updates on classes and women's health content</div>
   <a href="https://instagram.com/rubyisagoodgirl" class="cta-btn">@rubyisagoodgirl</a>
 </div>
 
