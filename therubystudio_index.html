@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ruby Studio · Women's Wellness · Hong Kong</title>
+<style>
+  :root {
+    --cream: #F8F2F2;
+    --warm: #F5ECEC;
+    --border: #F1E6E5;
+    --text: #1a1a1a;
+    --muted: #9a8a8a;
+    --accent: #DCC0BE;
+    --font-serif: 'Georgia', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--cream);
+    font-family: var(--font-sans);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Header ── */
+  .header {
+    padding: 28px 24px 24px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header-brand { font-family: var(--font-serif); font-size: 18px; letter-spacing: 0.5px; }
+  .header-tag { font-size: 11px; color: var(--muted); letter-spacing: 1.5px; text-transform: uppercase; }
+
+  /* ── Hero ── */
+  .hero { max-width: 480px; margin: 0 auto; width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px 48px;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: 42px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+    max-width: 500px;
+  }
+  .hero-sub {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 36px;
+    max-width: 420px;
+  }
+
+  /* Coming Soon pill */
+  .coming-pill {
+    display: inline-block;
+    background: var(--accent);
+    color: #000;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 24px;
+    margin-bottom: 40px;
+  }
+
+  /* ── Services ── */
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+  .service-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.2s;
+  }
+  .service-card.active { border-color: #DCC0BE; }
+  .service-card:hover { border-color: #DCC0BE; }
+  .service-left { text-align: left; }
+  .service-name { font-size: 14px; font-weight: 500; margin-bottom: 2px; }
+  .service-desc { font-size: 12px; color: var(--muted); }
+  .service-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    flex-shrink: 0;
+    margin-left: 12px;
+    font-weight: 500;
+  }
+  .badge-active { background: #F5ECEC; color: #b89a98; }
+  .badge-soon { background: #f0efed; color: var(--muted); }
+
+  /* ── Contact ── */
+  .contact { text-align: center; }
+  .contact-label { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+  .contact-links { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .contact-link {
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+  .contact-link-outline {
+    display: inline-block;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 13px;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+
+  /* ── Footer ── */
+  .footer {
+    padding: 20px 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <div>
+    <div class="header-brand">The Ruby Studio</div>
+    <div class="header-tag">Hong Kong</div>
+  </div>
+  <a href="https://instagram.com/rubyisagoodgirl"
+     style="font-size:12px;color:var(--muted);text-decoration:none;">
+    @rubyisagoodgirl ↗
+  </a>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+
+  <div class="hero-eyebrow">Women's Wellness · Tsim Sha Tsui</div>
+  <div class="hero-title">A space made for women.</div>
+  <div class="hero-sub">
+    完整網站即將推出。<br>
+    Full website coming soon.<br><br>
+    現時可透過 Instagram 查詢任何服務。<br>
+    Reach Ruby on Instagram for enquiries.
+  </div>
+
+  <div class="coming-pill">網站建設中 · Coming Soon</div>
+
+  <!-- Services -->
+  <div class="services">
+
+    <a href="/group" class="service-card active">
+      <div class="service-left">
+        <div class="service-name">Girls Group Class</div>
+        <div class="service-desc">小班訓練 · Tsim Sha Tsui · Max 4人</div>
+      </div>
+      <span class="service-badge badge-active">立即查看 →</span>
+    </a>
+
+    <a href="/pt" class="service-card active">
+      <div class="service-left">
+        <div class="service-name">Personal Training</div>
+        <div class="service-desc">1:1 · 1:2 · Women & Senior Specialist</div>
+      </div>
+      <span class="service-badge badge-active">立即查看 →</span>
+    </a>
+
+    <div class="service-card">
+      <div class="service-left">
+        <div class="service-name">Wellness</div>
+        <div class="service-desc">Stretch · Mindful Movement · Collaboration</div>
+      </div>
+      <span class="service-badge badge-soon">即將推出</span>
+    </div>
+
+    <div class="service-card">
+      <div class="service-left">
+        <div class="service-name">Content & Education</div>
+        <div class="service-desc">Women's Health · Body Awareness</div>
+      </div>
+      <span class="service-badge badge-soon">即將推出</span>
+    </div>
+
+  </div>
+
+  <!-- Contact -->
+  <div class="contact">
+    <div class="contact-label">聯絡 Ruby · Get in touch</div>
+    <div class="contact-links">
+      <a href="https://instagram.com/rubyisagoodgirl" class="contact-link">
+        @rubyisagoodgirl
+      </a>
+      <a href="mailto:ruby@therubystudio.co" class="contact-link-outline">
+        ruby@therubystudio.co
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  © 2026 The Ruby Studio · Women's Wellness · Tsim Sha Tsui, Hong Kong
+</div>
+
+</body>
+</html>
