@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personal Training · The Ruby Studio</title>
+<style>
+  :root {
+    --cream: #F8F2F2;
+    --warm: #F5ECEC;
+    --border: #F1E6E5;
+    --text: #1a1a1a;
+    --muted: #9a8a8a;
+    --accent: #DCC0BE;
+    --accent-dark: #b89a98;
+    --font-serif: 'Georgia', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--cream); font-family: var(--font-sans); color: var(--text); line-height: 1.6; }
+
+  /* Header */
+  .header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .header-brand { font-family: var(--font-serif); font-size: 16px; text-decoration: none; color: var(--text); }
+  .header-back { font-size: 12px; color: var(--muted); text-decoration: none; }
+
+  /* Hero */
+  .hero { background: var(--accent); padding: 48px 24px 40px; text-align: center; }
+  .hero-eyebrow { font-size: 11px; color: rgba(0,0,0,0.5); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .hero-title { font-family: var(--font-serif); font-size: 32px; color: #000; margin-bottom: 10px; line-height: 1.2; }
+  .hero-sub { font-size: 13px; color: rgba(0,0,0,0.6); margin-bottom: 24px; line-height: 1.7; }
+  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .hero-tag { background: rgba(255,255,255,0.5); color: rgba(0,0,0,0.7); font-size: 12px; padding: 5px 12px; border-radius: 20px; }
+
+  /* Section */
+  .section { padding: 28px 20px; border-bottom: 1px solid var(--border); max-width: 600px; margin: 0 auto; width: 100%; }
+  .section-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 16px; }
+
+  /* Format cards */
+  .format-row { display: flex; gap: 12px; margin-bottom: 12px; }
+  .format-card { flex: 1; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px 16px; text-align: center; }
+  .format-num { font-family: var(--font-serif); font-size: 36px; color: var(--accent-dark); line-height: 1; margin-bottom: 4px; }
+  .format-label { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+  .format-sub { font-size: 12px; color: var(--muted); }
+
+  /* Includes list */
+  .include-item { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; line-height: 1.6; align-items: flex-start; }
+  .include-item:last-child { border-bottom: none; }
+  .include-heart { color: var(--accent-dark); flex-shrink: 0; margin-top: 2px; }
+
+  /* Session detail */
+  .detail-box { background: var(--warm); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 10px; }
+  .detail-title { font-size: 13px; font-weight: 500; margin-bottom: 6px; }
+  .detail-text { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+  /* Rundown steps */
+  .rundown-step { display: flex; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .rundown-step:last-child { border-bottom: none; }
+  .step-num { font-family: var(--font-serif); font-size: 28px; color: var(--accent-dark); line-height: 1; flex-shrink: 0; width: 32px; }
+  .step-content { flex: 1; padding-top: 4px; }
+  .step-title { font-size: 14px; font-weight: 500; margin-bottom: 4px; }
+  .step-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+  /* Quote */
+  .quote-box { background: #fff; border-left: 3px solid var(--accent); border-radius: 0 10px 10px 0; padding: 16px 18px; margin-bottom: 12px; }
+  .quote-text { font-family: var(--font-serif); font-size: 16px; line-height: 1.6; color: var(--text); }
+
+  /* Who is it for */
+  .who-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .who-tag { background: var(--warm); border: 1px solid var(--border); border-radius: 20px; font-size: 13px; padding: 6px 14px; color: var(--text); }
+
+  /* CTA */
+  .cta-section { background: var(--accent); padding: 40px 24px; text-align: center; }
+  .cta-title { font-family: var(--font-serif); font-size: 22px; color: #000; margin-bottom: 8px; }
+  .cta-sub { font-size: 13px; color: rgba(0,0,0,0.6); margin-bottom: 24px; line-height: 1.7; }
+  .cta-btn { display: inline-block; background: #000; color: #fff; font-size: 14px; font-weight: 500; padding: 14px 32px; border-radius: 8px; text-decoration: none; }
+
+  /* Footer */
+  .footer { padding: 20px 24px; text-align: center; font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+  <a href="/" class="header-brand">The Ruby Studio</a>
+  <a href="/" class="header-back">← 返回主頁 Back</a>
+</div>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-eyebrow">Get Strong with Ruby · Tsim Sha Tsui</div>
+  <div class="hero-title">Personal Training</div>
+  <div class="hero-sub">
+    度身訂造的訓練計劃，由基礎開始，一步一步變強。<br>
+    A programme built around you — your body, your goals, your pace.
+  </div>
+  <div class="hero-tags">
+    <span class="hero-tag">1:1</span>
+    <span class="hero-tag">1:2</span>
+    <span class="hero-tag">Women & Senior Specialist</span>
+    <span class="hero-tag">60 mins / session</span>
+  </div>
+</div>
+
+<!-- Format -->
+<div class="section">
+  <div class="section-label">訓練形式 · Format</div>
+  <div class="format-row">
+    <div class="format-card">
+      <div class="format-num">1:1</div>
+      <div class="format-label">Individual</div>
+      <div class="format-sub">完全專注於你<br>Full focus on you</div>
+    </div>
+    <div class="format-card">
+      <div class="format-num">1:2</div>
+      <div class="format-label">Partner</div>
+      <div class="format-sub">與朋友一起練<br>Train with a friend</div>
+    </div>
+  </div>
+  <p style="font-size:12px;color:var(--muted);text-align:center;">母女檔、閨蜜檔歡迎 · Perfect for mother & daughter or friends</p>
+</div>
+
+<!-- What's included -->
+<div class="section">
+  <div class="section-label">包含 · What's Included</div>
+  <div class="include-item"><div class="include-heart">♡</div><div>Fat loss + muscle building — 減脂增肌，改善身體組成</div></div>
+  <div class="include-item"><div class="include-heart">♡</div><div>Self-confidence building — 建立對自己身體的信心</div></div>
+  <div class="include-item"><div class="include-heart">♡</div><div>Nutrition advice — 飲食建議及計劃，外食menu隨時諮詢，即日內回覆</div></div>
+  <div class="include-item"><div class="include-heart">♡</div><div>Daily communication — 平日有任何問題，隨時message</div></div>
+  <div class="include-item"><div class="include-heart">♡</div><div>Weekly check-in — 定期追蹤進度，按需要調整計劃</div></div>
+</div>
+
+<!-- Session detail -->
+<div class="section">
+  <div class="section-label">課堂詳情 · Session Details</div>
+  <div class="detail-box">
+    <div class="detail-title">訓練方式 Training Style</div>
+    <div class="detail-text">
+      課堂以 free weight 為主，用 dumbbell、barbell 學習基本動作 pattern（e.g. squat, hip hinge），再配合 machine 輔助訓練，亦會視乎情況安排 core 動作。目標是打好基礎，再一步步提升肌肉量。
+    </div>
+  </div>
+  <div class="detail-box">
+    <div class="detail-title">課外支援 Outside Support</div>
+    <div class="detail-text">
+      上課頭一個月請每天 check-in 飲食和體重，讓我提供意見和追蹤進度。一般建議初學者頭一至兩個月每週2課，學好基本動作模式後再按進度調整堂數。
+    </div>
+  </div>
+</div>
+
+<!-- First session rundown -->
+<div class="section">
+  <div class="section-label">首堂流程 · First Session Rundown</div>
+  <div class="rundown-step">
+    <div class="step-num">1</div>
+    <div class="step-content">
+      <div class="step-title">Body Composition Analysis</div>
+      <div class="step-desc">透過 InBody 測量身體組成，分析身體質素</div>
+    </div>
+  </div>
+  <div class="rundown-step">
+    <div class="step-num">2</div>
+    <div class="step-content">
+      <div class="step-title">Getting to Know You & Your Goals</div>
+      <div class="step-desc">了解你的生活習慣、運動經驗、受傷病史，以及目標和需求</div>
+    </div>
+  </div>
+  <div class="rundown-step">
+    <div class="step-num">3</div>
+    <div class="step-content">
+      <div class="step-title">Fitness & Basic Movement Assessments</div>
+      <div class="step-desc">評估基本體能，包括肌肉力量、心肺功能、平衡與協調等</div>
+    </div>
+  </div>
+  <div class="rundown-step">
+    <div class="step-num">4</div>
+    <div class="step-content">
+      <div class="step-title">Programme Design to Hit Your Goals</div>
+      <div class="step-desc">根據你的體能和目標制定課表，教導不同重量訓練動作</div>
+    </div>
+  </div>
+  <div class="rundown-step">
+    <div class="step-num">5</div>
+    <div class="step-content">
+      <div class="step-title">Feedback, Advice & Check-in</div>
+      <div class="step-desc">每天 check-in 飲食和身體狀況，從而提供建議</div>
+    </div>
+  </div>
+</div>
+
+<!-- Quote -->
+<div class="section">
+  <div class="section-label">關於 Ruby · About</div>
+  <div class="quote-box">
+    <div class="quote-text">「不論你是健身新手、毫無運動經驗、中老年人——我都有信心能夠協助你達成你的目標。」</div>
+  </div>
+  <div style="font-size:13px;color:var(--muted);line-height:1.7;margin-top:12px;">
+    教導過多達 <strong style="color:var(--text)">80+ 學生</strong>，經驗充足。時間彈性，以你的需求為先。除了堂費，沒有任何額外費用。
+  </div>
+</div>
+
+<!-- Who is it for -->
+<div class="section">
+  <div class="section-label">適合誰？ · Who Is It For</div>
+  <div class="who-tags">
+    <span class="who-tag">健身初學者 Beginner</span>
+    <span class="who-tag">銀髮族 Senior</span>
+    <span class="who-tag">產後媽媽 Postnatal</span>
+    <span class="who-tag">想改善姿勢 Posture</span>
+    <span class="who-tag">想減脂 Fat Loss</span>
+    <span class="who-tag">想增肌 Muscle Building</span>
+    <span class="who-tag">任何背景 Any Background</span>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-title">想了解更多？</div>
+  <div class="cta-sub">
+    收費及時間表因應個人需求而定。<br>
+    DM Ruby on Instagram for more details.
+  </div>
+  <a href="https://instagram.com/rubyisagoodgirl" class="cta-btn">DM @rubyisagoodgirl</a>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  © 2026 The Ruby Studio · Women's Wellness Coach · Tsim Sha Tsui, Hong Kong<br>
+  <span style="margin-top:4px;display:block">ruby@therubystudio.co</span>
+</div>
+
+</body>
+</html>
